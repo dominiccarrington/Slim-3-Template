@@ -1,0 +1,11 @@
+#!/usr/bin/env php
+<?php
+use Symfony\Component\Console\Application;
+
+require_once __DIR__ . "/bootstrap/console.php";
+
+$app = new Application();
+
+require __DIR__ . "/config/commands.php";
+
+$app->run();
