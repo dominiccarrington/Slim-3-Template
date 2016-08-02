@@ -1,9 +1,9 @@
 <?php
 namespace App\Controller;
 
-use Session;
-use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use Session;
 
 class HomeController extends Controller
 {

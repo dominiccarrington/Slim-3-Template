@@ -3,13 +3,13 @@ namespace App\Contract;
 
 interface HttpContract
 {
-    function set($key, $value, $expires);
+    public function set($key, $value, $expires);
 
-    function get($key);
+    public function get($key);
 
-    function exists($key);
+    public function exists($key);
 
-    function delete($key);
+    public function delete($key);
 
-    function flush();
+    public function flush();
 }

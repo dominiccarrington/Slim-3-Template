@@ -1,8 +1,8 @@
 <?php
 namespace App\Controller;
 
-use Slim\Views\Twig;
 use Slim\Router;
+use Slim\Views\Twig;
 
 class Controller
 {

@@ -1,6 +1,7 @@
 <?php
 namespace App\Command;
 
+use FileSystem;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -21,7 +22,6 @@ class AppNameCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        // $output->writeln("Change name of app to " . $input->getArgument("name"));
         $this->getCurrentNamespace();
         $this->changeAppNamespace($input, $output);
         $this->changeBootstrap($input, $output);
@@ -38,7 +38,7 @@ class AppNameCommand extends Command
 
     private function changeAppNamespace(InputInterface $input, OutputInterface $output)
     {
-        $this->foreachFolder(APP_DIR, function ($file) {
+        $this->foreachFolder(APP_DIR, ["php"], function ($file) use ($input, $output) {
             $search = [
                 'namespace ' . $this->current . ';',
                 $this->current . '\\',
@@ -47,52 +47,66 @@ class AppNameCommand extends Command
             $replace = [
                 'namespace ' . $input->getArgument('name') . ';',
                 $input->getArgument('name') . '\\',
-            ]; 
+            ];
 
-            $this->replaceIn($path, $search, $replace);
+            $this->replaceIn($file, $search, $replace);
         });
     }
 
     private function changeBootstrap(InputInterface $input, OutputInterface $output)
     {
-
+        //NO-OP
     }
     
     private function changeConfig(InputInterface $input, OutputInterface $output)
     {
+        $this->foreachFolder(CONFIG_DIR, ["php"], function ($file) use ($input, $output) {
+            $search = [
+                $this->current . '\\',
+            ];
 
+            $replace = [
+                $input->getArgument('name') . '\\',
+            ];
+
+            $this->replaceIn($file, $search, $replace);
+        });
     }
     
     private function changeRoutes(InputInterface $input, OutputInterface $output)
     {
+        $this->foreachFolder(ROUTES_DIR, ["php"], function ($file) use ($input, $output) {
+            $search = [
+                $this->current . '\\',
+            ];
 
+            $replace = [
+                $input->getArgument('name') . '\\',
+            ];
+
+            $this->replaceIn($file, $search, $replace);
+        });
     }
     
     private function updateComposer(InputInterface $input, OutputInterface $output)
     {
-        
+        $this->replaceIn(
+            APP_DIR . "/../composer.json",
+            $this->current . '\\',
+            $input->getArgument('name') . '\\'
+        );
+
+        $output->writeln("Namespacing changed!");
+        exec("composer dump-autoload -o");
     }
 
     private function foreachFolder($folder, $ext, callable $run)
     {
-        $ff = scandir($folder);
-        $ff = array_slice($ff, 2); 
-
-        foreach ($ff as $f) {
-            if (is_dir($folder . "/" . $f)) {
-                $this->foreachFolder($folder . "/" . $f, $run);
-            } else {
-                $fileExtension = explode(".", $f);
-                $fileExtension = isset($fileExtension[1]) ? $fileExtension[1] : "";
-                if (is_array($ext) && in_array($fileExtension, $ext)) {
-                    $run($folder . "/" . $f);
-                }
-            }
-        }
+        FileSystem::foreachFileInFolder($folder, $ext, $run);
     }
 
     private function replaceIn($path, $search, $replace)
     {
-        file_put_contents($path, str_replace($search, $replace, file_get_contents($path)));
+        FileSystem::replaceIn($path, $search, $replace);
     }
 }

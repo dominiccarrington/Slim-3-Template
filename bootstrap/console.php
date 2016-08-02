@@ -1,4 +1,5 @@
 <?php
+define('ROOT_DIR', __DIR__ . '/..');
 define('APP_DIR', __DIR__ . '/../app');
 define('CONFIG_DIR', __DIR__ . '/../config');
 define('RESOURCES_DIR', __DIR__ . '/../resources');

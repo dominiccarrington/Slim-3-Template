@@ -6,5 +6,6 @@
 return [
     "DB" => Illuminate\Database\Capsule\Manager::class,
     "Session" => App\Http\Session::class,
-    "Cookie" => App\Http\Cookie::class
+    "Cookie" => App\Http\Cookie::class,
+    "FileSystem" => App\File\FileSystem::class,
 ];
