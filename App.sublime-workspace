@@ -4,16 +4,36 @@
 		"selected_items":
 		[
 			[
+				"get_me",
+				"get_class_methods"
+			],
+			[
+				"call_",
+				"call_user_method"
+			],
+			[
+				"preg_m",
+				"preg_match"
+			],
+			[
+				"file",
+				"fileExtension"
+			],
+			[
+				"foreach",
+				"foreachFolder"
+			],
+			[
+				"for",
+				"foreachFolder"
+			],
+			[
 				"en",
 				"environment"
 			],
 			[
 				"ob",
 				"ob_start"
-			],
-			[
-				"for",
-				"foreach	foreach …"
 			],
 			[
 				"spl",
@@ -368,10 +388,6 @@
 				"twigEnvironment"
 			],
 			[
-				"file",
-				"fileFolders"
-			],
-			[
 				"arrat",
 				"array_shift"
 			],
@@ -422,10 +438,6 @@
 			[
 				"animate",
 				"animate	.animate()"
-			],
-			[
-				"preg_m",
-				"preg_match_all"
 			],
 			[
 				"addr",
@@ -502,63 +514,11 @@
 			[
 				"displ",
 				"displaySignUp"
-			],
-			[
-				"check",
-				"checkdate"
-			],
-			[
-				"email",
-				"emailChecker"
-			],
-			[
-				"input",
-				"inputAllowed"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "console",
-			"settings":
-			{
-				"buffer_size": 195,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "config/commands.php",
-			"settings":
-			{
-				"buffer_size": 133,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Command/AppNameCommand.php",
-			"settings":
-			{
-				"buffer_size": 288,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/Command/CleanUpCommand.php",
-			"settings":
-			{
-				"buffer_size": 288,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "vendor/symfony/console/Application.php",
-			"settings":
-			{
-				"buffer_size": 37294,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -758,23 +718,42 @@
 	"expanded_folders":
 	[
 		"/Users/Dominic/sites/trusty/gitslim.dev",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app/Command",
-		"/Users/Dominic/sites/trusty/gitslim.dev/config"
+		"/Users/Dominic/sites/trusty/gitslim.dev/config",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer/CodeSniffer",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/MySource",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2/Sniffs",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2/Sniffs/Classes"
 	],
 	"file_history":
 	[
+		"/Users/Dominic/sites/trusty/gitslim.dev/bootstrap/console.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/config/container.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/File/FileSystem.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/Command/CleanUpCommand.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/Contract/HttpContract.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/Command/AppNameCommand.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/bin/phpcbf",
+		"/Users/Dominic/sites/trusty/gitslim.dev/composer.json",
+		"/Users/Dominic/sites/trusty/gitslim.dev/config/commands.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/config/shortcuts.php",
+		"/Users/Dominic/www/mamp/social/cleanup.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/symfony/console/Application.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/console",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/App.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/Http/Cookie.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/symfony/console/Command/Command.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/README.md",
 		"/Users/Dominic/sites/trusty/gitslim.dev/.gitignore",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/Controller/Controller.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/bootstrap/app.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/symfony/console/Input/InputInterface.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/README.md",
 		"/Users/Dominic/sites/trusty/gitslim.dev/App.sublime-project",
 		"/Users/Dominic/sites/trusty/gitslim.dev/.env.example",
-		"/Users/Dominic/sites/trusty/gitslim.dev/config/container.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/database.php",
 		"/Users/Dominic/www/mamp/social/app/database.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app/Controller/Controller.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/bootstrap/app.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/Controller/HomeController.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/psr/http-message/src/ResponseInterface.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/functions/views.php",
@@ -787,16 +766,11 @@
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/php-di/php-di/src/DI/Container.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/middleware.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/zeuxisoo/slim-whoops/src/Zeuxisoo/Whoops/Provider/Slim/WhoopsMiddleware.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app/App.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/composer.json",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/Middleware/WhoopsMiddleware.php",
 		"/Users/Dominic/www/mamp/social/app/container.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/config/WhoopsMiddleware.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/php-di/slim-bridge/src/App.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/config/shortcuts.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app/Contract/HttpContract.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/Http/Session.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app/Http/Cookie.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/illuminate/support/Facades/Session.php",
 		"/Users/Dominic/www/mamp/social/app/Http/Cookie.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/Contracts/HttpContract.php",
@@ -881,21 +855,11 @@
 		"/Users/Dominic/www/mamp/social/resources/views/pages/index.twig",
 		"/Users/Dominic/www/mamp/social/resources/views/pages/new.twig",
 		"/Users/Dominic/www/mamp/social/resources/views/partials/carddetails.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/partials/countries.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/partials/replyblock.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/partials/statusblock.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/partials/takepicture.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/partials/userblock.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/partials/userdetails.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/search/main.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/settings/setup/privacy.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/settings/account.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/settings/cards.twig",
-		"/Users/Dominic/www/mamp/social/resources/views/settings/changecards.twig"
+		"/Users/Dominic/www/mamp/social/resources/views/partials/countries.twig"
 	],
 	"find":
 	{
-		"height": 70.0
+		"height": 88.0
 	},
 	"find_in_files":
 	{
@@ -927,6 +891,8 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"/\");\n",
+			"$path",
 			"container",
 			"errorHandler",
 			"name",
@@ -1038,6 +1004,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"$file",
 			"key",
 			"http://[profile]",
 			"birth_dd",
@@ -1060,169 +1027,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "console",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 195,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								180,
-								180
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "config/commands.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 133,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								132,
-								132
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/Command/AppNameCommand.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 288,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								157,
-								157
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/Command/CleanUpCommand.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 288,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								285,
-								285
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "vendor/symfony/console/Application.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37294,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"editorconfig": true,
-							"ensure_newline_at_eof_on_save": true,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1286.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1269,7 +1075,7 @@
 	"project": "App.sublime-project",
 	"replace":
 	{
-		"height": 114.0
+		"height": 150.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1279,8 +1085,56 @@
 		"selected_items":
 		[
 			[
+				"container.php",
+				"config/container.php"
+			],
+			[
+				"files",
+				"app/File/FileSystem.php"
+			],
+			[
+				"httpcon",
+				"app/Contract/HttpContract.php"
+			],
+			[
+				"appname",
+				"app/Command/AppNameCommand.php"
+			],
+			[
+				"file",
+				"app/File/FileSystem.php"
+			],
+			[
+				"console.",
+				"bootstrap/console.php"
+			],
+			[
+				"co",
+				"bootstrap/console.php"
+			],
+			[
+				"clean",
+				"app/Command/CleanUpCommand.php"
+			],
+			[
+				"appnameco",
+				"app/Command/AppNameCommand.php"
+			],
+			[
+				"console.pp",
+				"bootstrap/console.php"
+			],
+			[
 				"command",
 				"vendor/symfony/console/Command/Command.php"
+			],
+			[
+				"inputinter",
+				"vendor/symfony/console/Input/InputInterface.php"
+			],
+			[
+				"inputinterface",
+				"vendor/symfony/console/Input/InputInterface.php"
 			],
 			[
 				"application",
@@ -1413,10 +1267,6 @@
 			[
 				"slimapp.php",
 				"vendor/slim/slim/Slim/App.php"
-			],
-			[
-				"container.php",
-				"app/container.php"
 			],
 			[
 				"index.php",
@@ -1745,50 +1595,6 @@
 			[
 				"email.twg",
 				"resources/views/settings/email.twig"
-			],
-			[
-				"settingst",
-				"resources/views/navigation/settings.twig"
-			],
-			[
-				"request",
-				"vendor/slim/slim/Slim/Http/Request.php"
-			],
-			[
-				"set",
-				"routes/settings.php"
-			],
-			[
-				"userlbock",
-				"resources/views/partials/userblock.twig"
-			],
-			[
-				"profile.twig",
-				"resources/views/user/profile.twig"
-			],
-			[
-				"privacy",
-				"app/Models/Privacy.php"
-			],
-			[
-				"userdetials",
-				"resources/views/partials/userdetails.twig"
-			],
-			[
-				"searchcontorler",
-				"app/Controllers/SearchController.php"
-			],
-			[
-				"messagebag",
-				"vendor/illuminate/support/MessageBag.php"
-			],
-			[
-				"validate",
-				"app/Input/Validate.php"
-			],
-			[
-				"close",
-				"resources/views/settings/close.twig"
 			]
 		],
 		"width": 0.0

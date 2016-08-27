@@ -2,6 +2,7 @@
 use Interop\Container\ContainerInterface;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
+use App\Handler\WhoopsErrorHandler;
 use function DI\get;
 
 return [
@@ -21,5 +22,8 @@ return [
         $twig->addExtension($TwigExtension);
 
         return $twig;
+    },
+    'errorHandler' => function (ContainerInterface $c) {
+        return new WhoopsErrorHandler($c);
     }
 ];
