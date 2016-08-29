@@ -3,16 +3,18 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
 
+$port = defined("PHINX_MODE") && PHINX_MODE ? getenv("DB_PORT_REMOTE") : getenv("DB_PORT");
+
 $capsule->addConnection([
-    'driver'    => getenv("DB_DRIVER", "mysql"),
-    'host'      => getenv("DB_HOST", "localhost"),
+    'driver'    => getenv("DB_DRIVER"),
+    'host'      => getenv("DB_HOST"),
     'database'  => getenv("DB_DATABASE"),
-    'username'  => getenv("DB_USERNAME", "root"),
+    'username'  => getenv("DB_USERNAME"),
     'password'  => getenv("DB_PASSWORD"),
-    'charset'   => getenv("DB_CHARSET", "utf-8"),
-    'collation' => getenv("DB_COLLATION", "utf8_unicode_ci"),
+    'charset'   => getenv("DB_CHARSET"),
+    'collation' => getenv("DB_COLLATION"),
     'prefix'    => getenv("DB_PREFIX"),
-    'port'      => getenv("DB_PORT", 3306),
+    'port'      => $port,
 ]);
 
 $capsule->setAsGlobal();

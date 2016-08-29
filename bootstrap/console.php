@@ -11,6 +11,11 @@ $env = new Dotenv\Dotenv(__DIR__ . "/..");
 $env->load();
 
 /**
+ * Create connection to database
+ */
+require_once APP_DIR . '/database.php';
+
+/**
  * Register class aliases
  */
 foreach (require CONFIG_DIR . "/shortcuts.php" as $short => $full) {

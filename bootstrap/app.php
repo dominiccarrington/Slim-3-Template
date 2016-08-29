@@ -8,11 +8,6 @@ require_once 'console.php';
 $app = new App\App;
 
 /**
- * Create connection to database
- */
-require_once APP_DIR . '/database.php';
-
-/**
  * Setup the container within slim
  */
 require_once CONFIG_DIR . '/container.php';
