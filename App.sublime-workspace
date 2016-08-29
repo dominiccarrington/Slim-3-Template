@@ -519,6 +519,38 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "app/Auth/Auth.php",
+			"settings":
+			{
+				"buffer_size": 239,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/Model/User.php",
+			"settings":
+			{
+				"buffer_size": 574,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "vendor/illuminate/database/Eloquent/Model.php",
+			"settings":
+			{
+				"buffer_size": 93844,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "config/shortcuts.php",
+			"settings":
+			{
+				"buffer_size": 422,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -718,18 +750,26 @@
 	"expanded_folders":
 	[
 		"/Users/Dominic/sites/trusty/gitslim.dev",
-		"/Users/Dominic/sites/trusty/gitslim.dev/config",
-		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer",
-		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer/CodeSniffer",
-		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/MySource",
-		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2",
-		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2/Sniffs",
-		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/squizlabs/php_codesniffer/CodeSniffer/Standards/PSR2/Sniffs/Classes"
+		"/Users/Dominic/sites/trusty/gitslim.dev/app",
+		"/Users/Dominic/sites/trusty/gitslim.dev/config"
 	],
 	"file_history":
 	[
-		"/Users/Dominic/sites/trusty/gitslim.dev/bootstrap/console.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/bootstrap/app.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/config/container.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/slim/slim/Slim/App.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/.env",
+		"/Users/Dominic/sites/trusty/gitslim.dev/.env.example",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/database.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/App.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/Handler/WhoopsErrorHandler.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/bootstrap/console.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/Controller/HomeController.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/public/index.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/routes/index.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/zeuxisoo/slim-whoops/src/Zeuxisoo/Whoops/Provider/Slim/WhoopsMiddleware.php",
+		"/Users/Dominic/sites/trusty/gitslim.dev/app/middleware.php",
+		"/Users/Dominic/sites/trusty/vhost",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/File/FileSystem.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/Command/CleanUpCommand.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/Contract/HttpContract.php",
@@ -741,31 +781,21 @@
 		"/Users/Dominic/www/mamp/social/cleanup.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/symfony/console/Application.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/console",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app/App.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/Http/Cookie.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/symfony/console/Command/Command.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/.gitignore",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/Controller/Controller.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/bootstrap/app.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/symfony/console/Input/InputInterface.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/README.md",
 		"/Users/Dominic/sites/trusty/gitslim.dev/App.sublime-project",
-		"/Users/Dominic/sites/trusty/gitslim.dev/.env.example",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app/database.php",
 		"/Users/Dominic/www/mamp/social/app/database.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/filp/whoops/src/Whoops/Handler/PrettyPageHandler.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app/Controller/HomeController.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/psr/http-message/src/ResponseInterface.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/functions/views.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app/Handler/WhoopsErrorHandler.php",
 		"//vagrant/gitslim.dev/app/Controller/HomeController.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/.env",
-		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/slim/slim/Slim/App.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/php-di/php-di/src/DI/Definition/EntryReference.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/filp/whoops/src/Whoops/Run.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/php-di/php-di/src/DI/Container.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/app/middleware.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/zeuxisoo/slim-whoops/src/Zeuxisoo/Whoops/Provider/Slim/WhoopsMiddleware.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/Middleware/WhoopsMiddleware.php",
 		"/Users/Dominic/www/mamp/social/app/container.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/config/WhoopsMiddleware.php",
@@ -789,13 +819,11 @@
 		"/Users/Dominic/sites/trusty/gitslim.dev/resources/views/index.twig",
 		"/Users/Dominic/sites/trusty/gitslim.dev/resources/index.twig",
 		"/Users/Dominic/www/mamp/social/app/App.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/routes/index.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/psr/http-message/src/ServerRequestInterface.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/csrf-routes.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/settings.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/vendor/slim/slim/Slim/Router.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/app/non-csrf-routes.php",
-		"/Users/Dominic/sites/trusty/gitslim.dev/public/index.php",
 		"/Users/Dominic/sites/trusty/gitslim.dev/.editorconfig",
 		"/Users/Dominic/www/mamp/social/.editorconfig",
 		"/Users/Dominic/www/mamp/social/composer.json",
@@ -807,7 +835,6 @@
 		"/Users/Dominic/sites/trusty/littleportfoodbank.dev/wp-config.php",
 		"/Users/Dominic/sites/trusty/littleportfoodbank.dev/wp-config-sample.php",
 		"/Users/Dominic/sites/trusty/littleportfoodbank.dev/wp-admin/press-this.php",
-		"/Users/Dominic/sites/trusty/vhost",
 		"/usr/local/bin/vaghost",
 		"/Users/Dominic/sites/trusty/littleportfoodbank.dev/wp-content/index.php",
 		"/Users/Dominic/sites/trusty/wordpress.dev/wp-config.php",
@@ -866,6 +893,7 @@
 		"height": 158.0,
 		"where_history":
 		[
+			"/Users/Dominic/sites/trusty/gitslim.dev",
 			"/Users/Dominic/www/mamp/social/resources",
 			"/Users/Dominic/www/mamp/social/public",
 			"/Users/Dominic/www/mamp/social/resources",
@@ -891,6 +919,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"WhoopsErrorHandler",
 			"/\");\n",
 			"$path",
 			"container",
@@ -1027,8 +1056,138 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "app/Auth/Auth.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 239,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								25,
+								25
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/Model/User.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 574,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								565,
+								565
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "vendor/illuminate/database/Eloquent/Model.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 93844,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								17,
+								45
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "config/shortcuts.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 422,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								125,
+								125
+							]
+						],
+						"settings":
+						{
+							"editorconfig": true,
+							"ensure_newline_at_eof_on_save": true,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1085,7 +1244,39 @@
 		"selected_items":
 		[
 			[
+				"user",
+				"app/Model/User.php"
+			],
+			[
+				"model",
+				"vendor/illuminate/database/Eloquent/Model.php"
+			],
+			[
 				"container.php",
+				"config/container.php"
+			],
+			[
+				"database",
+				"app/database.php"
+			],
+			[
+				"bootstrap",
+				"bootstrap/app.php"
+			],
+			[
+				"slim/app",
+				"vendor/slim/slim/Slim/App.php"
+			],
+			[
+				"database.php",
+				"app/database.php"
+			],
+			[
+				"bootstrap/app",
+				"bootstrap/app.php"
+			],
+			[
+				"container",
 				"config/container.php"
 			],
 			[
@@ -1147,10 +1338,6 @@
 			[
 				"response",
 				"vendor/psr/http-message/src/ResponseInterface.php"
-			],
-			[
-				"slim/app",
-				"vendor/slim/slim/Slim/App.php"
 			],
 			[
 				"di/definition/entryreference",
@@ -1349,10 +1536,6 @@
 				"resources/views/templates/default.twig"
 			],
 			[
-				"user",
-				"app/Models/User.php"
-			],
-			[
 				"authcontroller",
 				"app/Controllers/AuthController.php"
 			],
@@ -1371,10 +1554,6 @@
 			[
 				"timeline",
 				"resources/views/timeline/index.twig"
-			],
-			[
-				"container",
-				"app/container.php"
 			],
 			[
 				"image.twig",
@@ -1435,10 +1614,6 @@
 			[
 				"moderatorcontroller",
 				"app/Controllers/ModeratorController.php"
-			],
-			[
-				"model",
-				"vendor/illuminate/database/Eloquent/Model.php"
 			],
 			[
 				"defa",
@@ -1579,22 +1754,6 @@
 			[
 				"facebook",
 				"vendor/facebook/php-sdk-v4/src/Facebook/Facebook.php"
-			],
-			[
-				"account.twig",
-				"resources/views/settings/account.twig"
-			],
-			[
-				"authcontroler",
-				"app/Controllers/AuthController.php"
-			],
-			[
-				"uploadedfile",
-				"vendor/guzzlehttp/psr7/src/UploadedFile.php"
-			],
-			[
-				"email.twg",
-				"resources/views/settings/email.twig"
 			]
 		],
 		"width": 0.0
