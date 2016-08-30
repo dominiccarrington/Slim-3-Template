@@ -10,7 +10,7 @@ class FileSystem
 
         foreach ($ff as $f) {
             if (is_dir($folder . "/" . $f)) {
-                self::foreachFolder($folder . "/" . $f, $ext, $run);
+                self::foreachFileInFolder($folder . "/" . $f, $ext, $run);
             } else {
                 $fileExtension = explode(".", $f);
                 $fileExtension = isset($fileExtension[1]) ? $fileExtension[1] : "";

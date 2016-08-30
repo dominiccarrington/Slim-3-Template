@@ -17,12 +17,14 @@ class CleanUpCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->cleanUpUseStatements();
+        $this->cleanUpUseStatements($input, $output);
     }
 
-    protected function cleanUpUseStatements()
+    protected function cleanUpUseStatements(InputInterface $input, OutputInterface $output)
     {
+        $output->writeln("Optimizing app dir");
         FileSystem::foreachFileInFolder(APP_DIR, ["php"], [$this, "runUseStatementCleanup"]);
+        $output->writeln("Optimizing config dir");
         FileSystem::foreachFileInFolder(CONFIG_DIR, ["php"], [$this, "runUseStatementCleanup"]);
     }
 

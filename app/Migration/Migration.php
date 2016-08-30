@@ -1,8 +1,8 @@
 <?php
 namespace App\Migration;
 
-use Phinx\Migration\AbstractMigration;
 use DB;
+use Phinx\Migration\AbstractMigration;
 
 class Migration extends AbstractMigration
 {

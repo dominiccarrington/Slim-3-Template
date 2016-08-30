@@ -1,11 +1,11 @@
 <?php
 namespace App\Middleware;
 
+use Illuminate\Support\MessageBag;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Slim\Views\Twig;
 use Session;
-use Illuminate\Support\MessageBag;
+use Slim\Views\Twig;
 
 class TwigValuesMiddleware extends Middleware
 {

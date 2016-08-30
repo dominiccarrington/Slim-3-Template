@@ -7,7 +7,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 abstract class Middleware
 {
     protected $app;
-    protected $router; 
+    protected $router;
 
     public function __construct(\Slim\App $app)
     {
@@ -20,7 +20,7 @@ abstract class Middleware
         return $this->runMiddleware($request, $response, $next);
     }
 
-    protected abstract function runMiddleware(Request $request, Response $response, callable $next);
+    abstract protected function runMiddleware(Request $request, Response $response, callable $next);
 
     public function __call($name, $args)
     {
