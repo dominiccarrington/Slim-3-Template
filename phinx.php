@@ -5,6 +5,9 @@ return [
     'seeds' => 'resources/seeds',
   ],
   'migration_base_class' => 'App\Migration\Migration',
+  'templates' => [
+      'file' => 'resources/migrations/stubs/template.stub'
+  ],
   'environments' => [
     'default_migration_table' => 'phinxlog',
     'default_database' => 'dev',
