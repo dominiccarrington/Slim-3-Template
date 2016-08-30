@@ -1,12 +1,12 @@
 <?php
+use App\Handler\WhoopsErrorHandler;
 use Interop\Container\ContainerInterface;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
-use App\Handler\WhoopsErrorHandler;
-use function DI\get;
-use Whoops\Run as WhoopsRun;
 use Whoops\Handler\JsonResponseHandler;
 use Whoops\Handler\PrettyPageHandler;
+use Whoops\Run as WhoopsRun;
+use function DI\get;
 
 return [
     'router' => get(Slim\Router::class),

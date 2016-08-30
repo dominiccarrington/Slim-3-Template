@@ -3,7 +3,7 @@ use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
 
-$port = defined("PHINX_MODE") && PHINX_MODE ? getenv("DB_PORT_REMOTE") : getenv("DB_PORT");
+$port = defined("CONSOLE_MODE") && CONSOLE_MODE ? getenv("DB_PORT_REMOTE") : getenv("DB_PORT");
 
 $capsule->addConnection([
     'driver'    => getenv("DB_DRIVER"),
