@@ -22,7 +22,7 @@ class UsersSeeder extends AbstractSeed
         for ($i = 0; $i < 100; $i++) {
             $data[] = [
                 "name" => $faker->name,
-                "password" => Hash::create($faker->password, PASSWORD_BCRYPT),
+                "password" => Hash::create("foo", PASSWORD_BCRYPT),
                 "email" => $faker->email
             ];
         }

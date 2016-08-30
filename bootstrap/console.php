@@ -3,9 +3,10 @@ define('ROOT_DIR', __DIR__ . '/..');
 define('APP_DIR', __DIR__ . '/../app');
 define('CONFIG_DIR', __DIR__ . '/../config');
 define('RESOURCES_DIR', __DIR__ . '/../resources');
-define("CONSOLE_MODE", true);
+define("CONSOLE_MODE", php_sapi_name() == 'cli');
 
 require_once __DIR__ . '/../vendor/autoload.php';
+require_once APP_DIR . '/functions.php';
 
 $env = new Dotenv\Dotenv(__DIR__ . "/..");
 $env->load();

@@ -17,4 +17,8 @@ return [
     "Cookie" => App\Http\Cookie::class,
     "FileSystem" => App\File\FileSystem::class,
     "Hash" => App\Auth\Hash::class,
+    "Auth" => App\Auth\Auth::class,
+
+    // Edit below here:
+    
 ];

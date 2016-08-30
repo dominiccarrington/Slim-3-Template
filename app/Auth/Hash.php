@@ -8,7 +8,7 @@ class Hash
         return password_hash($value, PASSWORD_BCRYPT);
     }
 
-    public static function verify($hashedValue, $realValue)
+    public static function verify($realValue, $hashedValue)
     {
         return password_verify($realValue, $hashedValue);
     }
