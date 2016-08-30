@@ -152,4 +152,10 @@ class App extends DIBridge
     }
 
     // }
+
+    public static function getCurrentAppNamespace()
+    {
+        preg_match("/namespace (\w*);/", explode(PHP_EOL, file_get_contents(APP_DIR . "/App.php"))[1], $results);
+        return $results[1];
+    }
 }

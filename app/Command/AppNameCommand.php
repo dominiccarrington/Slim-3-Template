@@ -6,6 +6,7 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use App\App;
 
 class AppNameCommand extends Command
 {
@@ -22,18 +23,12 @@ class AppNameCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
-        $this->getCurrentNamespace();
+        $this->current = App::getCurrentAppNamespace();
         $this->changeAppNamespace($input, $output);
         $this->changeBootstrap($input, $output);
         $this->changeConfig($input, $output);
         $this->changeRoutes($input, $output);
         $this->updateComposer($input, $output);
-    }
-
-    private function getCurrentNamespace()
-    {
-        preg_match("/namespace (\w*);/", explode(PHP_EOL, file_get_contents(APP_DIR . "/App.php"))[1], $results);
-        $this->current = $results[1];
     }
 
     private function changeAppNamespace(InputInterface $input, OutputInterface $output)

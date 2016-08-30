@@ -3,6 +3,7 @@ define('ROOT_DIR', __DIR__ . '/..');
 define('APP_DIR', __DIR__ . '/../app');
 define('CONFIG_DIR', __DIR__ . '/../config');
 define('RESOURCES_DIR', __DIR__ . '/../resources');
+define('STUB_DIR', __DIR__ . '/../stubs');
 define("CONSOLE_MODE", php_sapi_name() == 'cli');
 
 require_once __DIR__ . '/../vendor/autoload.php';

@@ -1,0 +1,16 @@
+
+$app->group('/[modelVar]', function () {
+    $this->get('/', ['[fullController]', 'index'])->setName('[modelVar].index');
+    
+    $this->get('/new', ['[fullController]', 'create'])->setName('[modelVar].create');
+    $this->post('/new', ['[fullController]', 'postCreate']);
+
+    $this->group('/{id}', function () {
+        $this->get('/', ['[fullController]', 'view'])->setName('[modelVar].view');
+
+        $this->get('/edit', ['[fullController]', 'edit'])->setName('[modelVar].edit');
+        $this->put('/edit', ['[fullController]', 'putEdit']);
+
+        $this->delete('/delete', ['[fullController]', 'destory'])->setName('[modelVar].destory');
+    });
+});

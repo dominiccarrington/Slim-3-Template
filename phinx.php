@@ -6,7 +6,7 @@ return [
   ],
   'migration_base_class' => 'App\Migration\Migration',
   'templates' => [
-      'file' => 'resources/migrations/stubs/template.stub'
+      'file' => 'stubs/migrations.stub'
   ],
   'environments' => [
     'default_migration_table' => 'phinxlog',

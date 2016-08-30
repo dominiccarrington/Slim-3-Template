@@ -1,0 +1,51 @@
+<?php
+namespace [namespace]\Controller;
+
+use Psr\Http\Message\ResponseInterface as Response;
+use Psr\Http\Message\ServerRequestInterface as Request;
+use [namespace]\Model\[modelName];
+
+class [controllerName] extends Controller
+{
+    // GET
+    public function index(Request $request, Response $response, [modelName] $[modelVar])
+    {
+
+    }
+
+    // GET
+    public function create(Request $request, Response $response, [modelName] $[modelVar])
+    {
+
+    }
+
+    // POST
+    public function postCreate(Request $request, Response $response, [modelName] $[modelVar])
+    {
+
+    }
+
+    // GET
+    public function view(Request $request, Response $response, [modelName] $[modelVar], $id)
+    {
+
+    }
+
+    // GET
+    public function edit(Request $request, Response $response, [modelName] $[modelVar], $id)
+    {
+
+    }
+
+    // PUT
+    public function putEdit(Request $request, Response $response, [modelName] $[modelVar], $id)
+    {
+
+    }
+
+    // DELETE
+    public function destory(Request $request, Response $response, [modelName] $[modelVar], $id)
+    {
+
+    }
+}
