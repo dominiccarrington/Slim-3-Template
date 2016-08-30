@@ -1,4 +1,7 @@
 <?php
+use Slim\Views\Twig;
+use Illuminate\Support\MessageBag;
+
 session_start();
 require_once 'console.php';
 
@@ -7,24 +10,15 @@ require_once 'console.php';
  */
 $app = new App\App;
 
-/**
- * Setup the container within slim
- */
-require_once CONFIG_DIR . '/container.php';
+$app->getContainer()->get('whoops')->register();
 
 /**
  * Register middleware
  */
-require_once APP_DIR . '/middleware.php';
+require_once CONFIG_DIR . '/middleware.php';
 
 /**
- * Register routes which will be under CSRF protection
+ * Register routes 
  */
-$app->group('', function () use ($app) {
-    require_once APP_DIR . '/csrf-routes.php';
-})->add($app->getContainer()->get('csrf'));
+require_once CONFIG_DIR . '/routes.php';
 
-/**
- * Register routes which will not be under CSRF protection
- */
-require_once APP_DIR . '/non-csrf-routes.php';

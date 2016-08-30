@@ -4,6 +4,9 @@ use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
 use App\Handler\WhoopsErrorHandler;
 use function DI\get;
+use Whoops\Run as WhoopsRun;
+use Whoops\Handler\JsonResponseHandler;
+use Whoops\Handler\PrettyPageHandler;
 
 return [
     'router' => get(Slim\Router::class),
@@ -22,6 +25,26 @@ return [
         $twig->addExtension($TwigExtension);
 
         return $twig;
+    },
+    'whoops' => function (ContainerInterface $c) {
+        $whoops = new WhoopsRun();
+        $environment = $c->get('environment');
+
+        $prettyPageHandler = new PrettyPageHandler();
+        $prettyPageHandler->setEditor(getenv('EDITOR') ?: 'sublime');
+
+        $prettyPageHandler->addDataTable('Slim Application', [
+            'Application Class' => get_class($this),
+            'Script Name'       => $environment->get('SCRIPT_NAME'),
+            'Request URI'       => $environment->get('PATH_INFO') ?: '<none>',
+        ]);
+
+        $whoops->pushHandler($prettyPageHandler);
+        if (\Whoops\Util\Misc::isAjaxRequest()) {
+            $whoops->pushHandler(new JsonResponseHandler);
+        }
+
+        return $whoops;
     },
     'errorHandler' => function (ContainerInterface $c) {
         return new WhoopsErrorHandler($c);
