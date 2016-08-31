@@ -23,6 +23,7 @@ return [
         $TwigExtension = new TwigExtension($c->get('router'), $c->get('request')->getUri());
         define('BASE_PATH', $TwigExtension->baseUrl());
         $twig->addExtension($TwigExtension);
+        $twig->addExtension(new \App\Twig\TwigExtension($c->get('router'), $c->get('request')->getUri()));
 
         return $twig;
     },

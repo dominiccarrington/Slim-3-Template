@@ -4,7 +4,12 @@
         <meta charset="UTF-8">
         <title>Slim 3 Framework Application</title>
         <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+        <link rel="stylesheet" href="{{ css('prism.css') }}">
         <style>
+            * {
+                box-sizing: border-box;
+            }
+            
             html, body {
                 height: 100%;
             }
@@ -30,13 +35,32 @@
                 display: inline-block;
                 font-size: 1.2em;
             }
+
+            pre {
+                height: 200px;
+                overflow-y: scroll;
+            }
         </style>
+        <script src="{{ js('prism.js') }}"></script>
     </head>
     <body>
         <div class="container">
             <div class="content">
                 <h1>Slim 3 has been installed</h1>
-                {{ csrf_inputs|raw }}
+                <div class="base_files">
+                    <h2>Controller Code</h2>
+                    <pre class="language-php">
+                        <code class="well language-php">
+{{ controllerCode }}
+                        </code>
+                    </pre>
+                    <h2>View Code</h2>
+                    <pre class="language-twig">
+                        <code class="well language-twig">
+{{ viewCode }}
+                        </code>
+                    </pre>
+                </div>
             </div>
         </div>
     </body>
