@@ -42,6 +42,17 @@ class TwigValuesMiddleware extends Middleware
             <input type='hidden' name='" . $nameKey . "' value='" . $name . "'>
             <input type='hidden' name='" . $valueKey . "' value='" . $value . "'>
         ");
+
+        // Pagination Setup
+        Paginator::currentPageResolver(function ($pageName) use ($request) {
+            $params = $request->getQueryParams();
+            return isset($params[$pageName]) ? (int) $params[$pageName] : 1;
+        });
+
+        Paginator::currentPathResolver(function () use ($request) {
+            return preg_replace("/(\?|&)page=\d*/", "", $request->getUri());
+        });
+
         $response = $next($request, $response);
         return $response;
     }

@@ -1,6 +1,6 @@
 
 $app->group('/[modelVar]', function () {
-    $this->get('/', ['[fullController]', 'index'])->setName('[modelVar].index');
+    $this->get('', ['[fullController]', 'index'])->setName('[modelVar].index');
     
     $this->get('/new', ['[fullController]', 'create'])->setName('[modelVar].create');
     $this->post('/new', ['[fullController]', 'postCreate']);
