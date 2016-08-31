@@ -49,26 +49,32 @@ class CrudCommand extends Command
         if (file_exists(STUB_DIR . '/crud_controller.stub')) {
             $this->controllerStub = file_get_contents(STUB_DIR . '/crud_controller.stub');
         } else {
-            throw new \RuntimeException("Controller stub (crud_controller.stub) should be found in " . STUB_DIR . ", it is missing.");
+            throw new \RuntimeException("Controller stub (crud_controller.stub) should be found in " .
+                STUB_DIR .
+                ", it is missing.");
         }
 
         if (file_exists(STUB_DIR . '/model.stub')) {
             $this->modelStub = file_get_contents(STUB_DIR . '/model.stub');
         } else {
-            throw new \RuntimeException("Model stub (model.stub) should be found in " . STUB_DIR . ", it is missing.");
+            throw new \RuntimeException("Model stub (model.stub) should be found in " .
+                STUB_DIR .
+                ", it is missing.");
         }
 
         if (file_exists(STUB_DIR . '/crud_routes.stub')) {
             $this->routeStub = file_get_contents(STUB_DIR . '/crud_routes.stub');
         } else {
-            throw new \RuntimeException("Routes stub (crud_routes.stub) should be found in " . STUB_DIR . ", it is missing.");            
+            throw new \RuntimeException("Routes stub (crud_routes.stub) should be found in " .
+                STUB_DIR .
+                ", it is missing.");
         }
     }
 
     private function createController($model, OutputInterface $output)
     {
         file_put_contents(
-            APP_DIR . "/Controller/{$model}Controller.php", 
+            APP_DIR . "/Controller/{$model}Controller.php",
             $this->convertString($model, $this->controllerStub)
         );
     }

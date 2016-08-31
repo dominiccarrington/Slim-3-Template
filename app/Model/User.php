@@ -6,7 +6,7 @@ use Illuminate\Contracts\Auth\Access\Authorizable;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Illuminate\Contracts\Auth\CanResetPassword;
 
-class User extends Eloquent implements 
+class User extends Eloquent implements
     Authenticatable,
     Authorizable,
     CanResetPassword

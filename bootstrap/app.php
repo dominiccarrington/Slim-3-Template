@@ -18,7 +18,6 @@ $app->getContainer()->get('whoops')->register();
 require_once CONFIG_DIR . '/middleware.php';
 
 /**
- * Register routes 
+ * Register routes
  */
 require_once CONFIG_DIR . '/routes.php';
-

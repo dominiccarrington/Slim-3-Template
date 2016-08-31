@@ -26,7 +26,9 @@ class Auth
             }
 
             if (!in_array("Illuminate\Contracts\Auth\Authenticatable", class_implements($model))) {
-                throw new \InvalidArgumentException("Class " . $model . " must implement Illuminate\Contracts\Auth\Authenticatable");
+                throw new \InvalidArgumentException("Class " .
+                    $model .
+                    " must implement Illuminate\Contracts\Auth\Authenticatable");
             }
 
             $user = null;
