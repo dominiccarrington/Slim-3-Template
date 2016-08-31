@@ -1,12 +1,12 @@
 <?php
 namespace App\Command;
 
+use App\App;
 use FileSystem;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use App\App;
 
 class AppNameCommand extends Command
 {

@@ -1,8 +1,8 @@
 <?php
 
-use Phinx\Seed\AbstractSeed;
 use Faker\Factory as Faker;
 use Hash;
+use Phinx\Seed\AbstractSeed;
 
 class UsersSeeder extends AbstractSeed
 {

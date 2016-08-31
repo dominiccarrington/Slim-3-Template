@@ -24,6 +24,10 @@ class CleanUpCommand extends Command
     {
         $output->writeln("Optimizing app dir");
         FileSystem::foreachFileInFolder(APP_DIR, ["php"], [$this, "runUseStatementCleanup"]);
+        $output->writeln("Optimizing bootstrap dir");
+        FileSystem::foreachFileInFolder(ROOT_DIR . '/bootstrap', ["php"], [$this, "runUseStatementCleanup"]);
+        $output->writeln("Optimizing resources dir");
+        FileSystem::foreachFileInFolder(RESOURCES_DIR, ["php"], [$this, "runUseStatementCleanup"]);
         $output->writeln("Optimizing config dir");
         FileSystem::foreachFileInFolder(CONFIG_DIR, ["php"], [$this, "runUseStatementCleanup"]);
     }

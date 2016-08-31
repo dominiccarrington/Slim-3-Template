@@ -1,6 +1,6 @@
 <?php
-use Slim\Views\Twig;
 use Illuminate\Support\MessageBag;
+use Slim\Views\Twig;
 
 session_start();
 require_once 'console.php';

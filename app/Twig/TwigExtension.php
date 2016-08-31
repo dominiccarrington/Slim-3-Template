@@ -2,8 +2,8 @@
 namespace App\Twig;
 
 use App\App;
-use Slim\Interfaces\RouterInterface;
 use Slim\Http\Uri;
+use Slim\Interfaces\RouterInterface;
 
 class TwigExtension extends \Twig_Extension
 {
