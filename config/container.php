@@ -18,7 +18,7 @@ return [
     },
     Twig::class => function (ContainerInterface $c) {
         $twig = new Twig(RESOURCES_DIR . '/views', [
-            'cache' => __DIR__ . "/../storage/views/"
+            'cache' => getenv("APP_DEBUG") ? null : __DIR__ . "/../storage/views/"
         ]);
         $TwigExtension = new TwigExtension($c->get('router'), $c->get('request')->getUri());
         define('BASE_PATH', $TwigExtension->baseUrl());
