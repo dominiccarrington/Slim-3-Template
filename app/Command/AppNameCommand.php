@@ -35,7 +35,7 @@ class AppNameCommand extends Command
         $this->changeAppNamespace($input, $output);
         $this->changeBootstrap($input, $output);
         $this->changeConfig($input, $output);
-        $this->updateMigrations($input, $output);        
+        $this->updateMigrations($input, $output);
         $this->updateComposer($input, $output);
 
         
