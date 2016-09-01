@@ -2,6 +2,7 @@
 namespace App\Twig;
 
 use App\App;
+use Auth;
 use Slim\Http\Uri;
 use Slim\Interfaces\RouterInterface;
 
@@ -26,6 +27,13 @@ class TwigExtension extends \Twig_Extension
         return [
             new \Twig_SimpleFunction("css", [$this, "css"]),
             new \Twig_SimpleFunction("js", [$this, "js"]),
+        ];
+    }
+
+    public function getGlobals()
+    {
+        return [
+            "Auth" => new Auth()
         ];
     }
 
