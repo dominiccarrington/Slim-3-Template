@@ -1,7 +1,9 @@
 <?php
 namespace App\File;
 
-class FileSystem
+use Illuminate\Filesystem\Filesystem as IlluminateFileSystem;
+
+class FileSystem extends IlluminateFileSystem
 {
     public static function foreachFileInFolder($folder, $ext, $run)
     {
