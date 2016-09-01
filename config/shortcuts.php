@@ -10,6 +10,8 @@ return [
     "Eloquent" => Illuminate\Database\Eloquent\Model::class,
     "DB" => Illuminate\Database\Capsule\Manager::class,
     "FileSystem" => Illuminate\Filesystem\Filesystem::class,
+    "Arr" => Illuminate\Support\Arr::class,
+    "Str" => Illuminate\Support\Str::class,
 
     /**
      * App Shortcuts
