@@ -1,10 +1,12 @@
 <?php
 namespace App\Command;
 
+use App\Timer\Timer;
 use FileSystem;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Finder\Finder;
 
 class CleanUpCommand extends Command
 {
@@ -22,14 +24,16 @@ class CleanUpCommand extends Command
 
     protected function cleanUpUseStatements(InputInterface $input, OutputInterface $output)
     {
-        $output->writeln("Optimizing app dir");
-        FileSystem::foreachFileInFolder(APP_DIR, ["php"], [$this, "runUseStatementCleanup"]);
-        $output->writeln("Optimizing bootstrap dir");
-        FileSystem::foreachFileInFolder(ROOT_DIR . '/bootstrap', ["php"], [$this, "runUseStatementCleanup"]);
-        $output->writeln("Optimizing resources dir");
-        FileSystem::foreachFileInFolder(RESOURCES_DIR, ["php"], [$this, "runUseStatementCleanup"]);
-        $output->writeln("Optimizing config dir");
-        FileSystem::foreachFileInFolder(CONFIG_DIR, ["php"], [$this, "runUseStatementCleanup"]);
+        Timer::start('cleanup');
+        $files = Finder::create()->in(APP_DIR)->name('*.php')
+        ->append(Finder::create()->in(ROOT_DIR . '/bootstrap')->name('*.php'))
+        ->append(Finder::create()->in(CONFIG_DIR)->name('*.php'))
+        ->append(Finder::create()->in(RESOURCES_DIR)->name('*.php'));
+        foreach ($files as $file) {
+            $this->runUseStatementCleanup($file->getRealPath());
+        }
+
+        $output->writeln("Cleaned up use statements (Took: " . Timer::finish('cleanup') . ")");
     }
 
     public function runUseStatementCleanup($fileName)

@@ -1,5 +1,6 @@
 <?php
 use App\Handler\WhoopsErrorHandler;
+use FileSystem;
 use Interop\Container\ContainerInterface;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
@@ -23,7 +24,7 @@ return [
         $TwigExtension = new TwigExtension($c->get('router'), $c->get('request')->getUri());
         define('BASE_PATH', $TwigExtension->baseUrl());
         $twig->addExtension($TwigExtension);
-        $twig->addExtension(new \App\Twig\TwigExtension($c->get('router'), $c->get('request')->getUri()));
+        $twig->addExtension(new \App\Twig\TwigExtension($c->get('router'), $c->get('request')->getUri(), new FileSystem()));
 
         return $twig;
     },

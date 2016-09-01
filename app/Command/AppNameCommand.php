@@ -2,21 +2,25 @@
 namespace App\Command;
 
 use App\App;
+use App\Timer\Timer;
 use FileSystem;
+use Illuminate\Support\Composer;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-use Illuminate\Support\Composer;
+use Symfony\Component\Finder\Finder;
 
 class AppNameCommand extends Command
 {
     private $current;
     private $composer;
+    private $files;
 
     protected function configure()
     {
-        $this->composer = new Composer(new FileSystem, ROOT_DIR);
+        $this->files = new FileSystem();
+        $this->composer = new Composer($this->files, ROOT_DIR);
         $this
             ->setName("app:name")
             ->setDescription("Change the namespace of the application")
@@ -26,69 +30,31 @@ class AppNameCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
+        Timer::start('namespace');
         $this->current = App::getCurrentAppNamespace();
         $this->changeAppNamespace($input, $output);
         $this->changeBootstrap($input, $output);
         $this->changeConfig($input, $output);
-        $this->changeRoutes($input, $output);
         $this->updateMigrations($input, $output);        
         $this->updateComposer($input, $output);
+
+        
+        $output->writeln("Namespacing changed! (Time Taken: " . Timer::finish('namespace') . "s)");
     }
 
     private function changeAppNamespace(InputInterface $input, OutputInterface $output)
     {
-        $this->foreachFolder(APP_DIR, ["php"], function ($file) use ($input, $output) {
-            $search = [
-                'namespace ' . $this->current . ';',
-                $this->current . '\\',
-            ];
-
-            $replace = [
-                'namespace ' . $input->getArgument('name') . ';',
-                $input->getArgument('name') . '\\',
-            ];
-
-            $this->replaceIn($file, $search, $replace);
-        });
+        $this->updateNamespace(APP_DIR, $input);
     }
 
     private function changeBootstrap(InputInterface $input, OutputInterface $output)
     {
-        $this->foreachFolder(ROOT_DIR . "/bootstrap", ["php"], function ($file) use ($input, $output) {
-            $search = [
-                $this->current . '\\',
-            ];
-
-            $replace = [
-                $input->getArgument('name') . '\\',
-            ];
-
-            $this->replaceIn($file, $search, $replace);
-        });
+        $this->updateNamespace(ROOT_DIR . "/bootstrap", $input);
     }
     
     private function changeConfig(InputInterface $input, OutputInterface $output)
     {
-        $this->foreachFolder(CONFIG_DIR, ["php"], function ($file) use ($input, $output) {
-            $search = [
-                $this->current . '\\',
-            ];
-
-            $replace = [
-                $input->getArgument('name') . '\\',
-            ];
-
-            $this->replaceIn($file, $search, $replace);
-        });
-    }
-    
-    private function changeRoutes(InputInterface $input, OutputInterface $output)
-    {
-        $this->replaceIn(
-            CONFIG_DIR . "/routes.php",
-            $this->current . '\\',
-            $input->getArgument('name') . '\\'
-        );
+        $this->updateNamespace(CONFIG_DIR, $input);
     }
     
     private function updateMigrations(InputInterface $input, OutputInterface $output)
@@ -99,9 +65,7 @@ class AppNameCommand extends Command
             $input->getArgument('name') . '\\'
         );
 
-        $this->foreachFolder(RESOURCES_DIR, ['php'], function ($file) use ($input, $output) {
-            $this->replaceIn($file, $this->current . '\\', $input->getArgument('name') . '\\');
-        });
+        $this->updateNamespace(RESOURCES_DIR, $input);
     }
 
     private function updateComposer(InputInterface $input, OutputInterface $output)
@@ -111,18 +75,42 @@ class AppNameCommand extends Command
             $this->current . '\\',
             $input->getArgument('name') . '\\'
         );
-
-        $output->writeln("Namespacing changed!");
         $this->composer->dumpOptimized();
     }
 
-    private function foreachFolder($folder, $ext, callable $run)
+    protected function updateNamespace($path, $input)
     {
-        FileSystem::foreachFileInFolder($folder, $ext, $run);
+        $files = [];
+        if ($this->files->isDirectory($path)) {
+            $files = Finder::create()
+                ->in($path)
+                ->contains($this->current)
+                ->name("*.php");
+        } else {
+            $files = [$path];
+        }
+
+        foreach ($files as $file) {
+            $search = [
+                'namespace ' . $this->current . ';',
+                $this->current . '\\',
+            ];
+
+            $replace = [
+                'namespace ' . $input->getArgument('name') . ';',
+                $input->getArgument('name') . '\\',
+            ];
+
+            if ($file instanceof Symfony\Component\Finder\SplFileInfo) {
+                $this->replaceIn($file->getRealPath(), $search, $replace);
+            } else {
+                $this->replaceIn($file, $search, $replace);
+            }
+        }
     }
 
-    private function replaceIn($path, $search, $replace)
+    protected function replaceIn($path, $search, $replace)
     {
-        FileSystem::replaceIn($path, $search, $replace);
+        $this->files->put($path, str_replace($search, $replace, $this->files->get($path)));
     }
 }

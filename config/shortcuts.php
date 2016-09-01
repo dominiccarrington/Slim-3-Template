@@ -9,13 +9,13 @@ return [
      */
     "Eloquent" => Illuminate\Database\Eloquent\Model::class,
     "DB" => Illuminate\Database\Capsule\Manager::class,
+    "FileSystem" => Illuminate\Filesystem\Filesystem::class,
 
     /**
      * App Shortcuts
      */
     "Session" => App\Http\Session::class,
     "Cookie" => App\Http\Cookie::class,
-    "FileSystem" => App\File\FileSystem::class,
     "Hash" => App\Auth\Hash::class,
     "Auth" => App\Auth\Auth::class,
 
