@@ -1,7 +1,11 @@
 <?php
+use Respect\Validation\Validator as v;
+
 require_once __DIR__ . '/../config/globals.php';
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once APP_DIR . '/functions.php';
+
+v::with('App\\Validation\\Rules');
 
 $env = new Dotenv\Dotenv(__DIR__ . "/..");
 $env->load();

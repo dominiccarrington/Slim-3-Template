@@ -2,11 +2,13 @@
 use App\Command\AppNameCommand;
 use App\Command\CleanUpCommand;
 use App\Command\CrudCommand;
+use App\Command\CreateValidationCommand;
 use Phinx\Console\Command as Phinx;
 
 $app->add(new AppNameCommand);
 $app->add(new CleanUpCommand);
 $app->add(new CrudCommand);
+$app->add(new CreateValidationCommand);
 /**
  * Add Migration to Commands
  */

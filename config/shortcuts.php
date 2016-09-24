@@ -20,6 +20,7 @@ return [
     "Cookie" => App\Http\Cookie::class,
     "Hash" => App\Auth\Hash::class,
     "Auth" => App\Auth\Auth::class,
+    "Validator" => App\Validation\Validator::class,
 
     // Edit below here:
     

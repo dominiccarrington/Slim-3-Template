@@ -1,0 +1,13 @@
+<?php
+namespace [namespace]\Validation\Exceptions;
+
+use Respect\Validation\Exceptions\ValidationException;
+
+class [rule]Exception extends ValidationException
+{
+    public static $dafaultTemplate = [
+        self::MODE_DEFAULT = [
+            self::STANDARD = "Validation Failed"
+        ],
+    ];
+}
