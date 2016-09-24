@@ -63,7 +63,7 @@ class CreateValidationCommand extends Command
     private function createException($rule, OutputInterface $output)
     {
         file_put_contents(
-            APP_DIR . "/Validation/Exceptions/{$rule}.php",
+            APP_DIR . "/Validation/Exceptions/{$rule}Exception.php",
             $this->convertString($rule, $this->exceptionStub)
         );
     }

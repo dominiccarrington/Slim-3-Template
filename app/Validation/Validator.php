@@ -36,6 +36,13 @@ class Validator
         return !$this->passes();
     }
 
+    public function addToErrors($key, $value)
+    {
+        $errors = Session::get("validation_errors");
+        $errors[$key] = $value;
+        Session::set("validation_errors", $errors);
+    }
+
     public function flush()
     {
         $this->errors = [];

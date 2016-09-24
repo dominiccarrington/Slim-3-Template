@@ -51,4 +51,9 @@ class User extends Eloquent implements
     {
         return $this->email;
     }
+
+    public function sendPasswordResetNotification($token)
+    {
+        // NO-OP
+    }
 }
