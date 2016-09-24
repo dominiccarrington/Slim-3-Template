@@ -13,10 +13,11 @@ class Validator
     public function validate($request, array $rules)
     {
         foreach ($rules as $field => $rule) {
+            $split = explode('|', $field);
             try {
-                $rule->setName(ucfirst($field))->assert($request->getParam($field));
+                $rule->setName(isset($split[1]) ? $split[1] : ucfirst($split[0]))->assert($request->getParam($split[0]));
             } catch (NestedValidationException $e) {
-                $this->errors[$field] = $e->getMessages();
+                $this->errors[$split[0]] = $e->getMessages();
             }
         }
 
