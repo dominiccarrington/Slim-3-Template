@@ -14,7 +14,7 @@ class Validator
     {
         foreach ($rules as $field => $rule) {
             try {
-                $rule->setname(ucfirst($field))->assert($request->getParam($field));
+                $rule->setName(ucfirst($field))->assert($request->getParam($field));
             } catch (NestedValidationException $e) {
                 $this->errors[$field] = $e->getMessages();
             }
