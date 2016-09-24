@@ -4,6 +4,7 @@ namespace App\Validation;
 
 use Respect\Validation\Validator as Respect;
 use Respect\Validation\Exceptions\NestedValidationException;
+use Session;
 
 class Validator
 {
@@ -19,7 +20,7 @@ class Validator
             }
         }
 
-        Session::set($this->errors);
+        Session::set("validation_errors", $this->errors);
 
         return $this;
     }
