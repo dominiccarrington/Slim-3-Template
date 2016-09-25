@@ -29,6 +29,12 @@ return [
             new FileSystem()
         ));
 
+        // $twig->addExtension(new Twig_Extensions_Extension_Text);
+        // $twig->addExtension(new Twig_Extensions_Extension_Array);
+        // $twig->addExtension(new Twig_Extensions_Extension_I18n);
+        // $twig->addExtension(new Twig_Extensions_Extension_Intl);
+        // $twig->addExtension(new Twig_Extensions_Extension_Date);
+
         return $twig;
     },
     'whoops' => function (ContainerInterface $c) {
