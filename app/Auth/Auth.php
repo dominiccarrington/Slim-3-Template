@@ -11,47 +11,47 @@ class Auth
     public static function check($values = [])
     {
         if (self::loggedIn()) {
-			return true;
-		}
+            return true;
+        }
         
         $model = get_model("user");
 
-		if (!isset($values["password"])) {
-			throw new Exception("Passsword was not defined in values");
-		}
+        if (!isset($values["password"])) {
+            throw new Exception("Passsword was not defined in values");
+        }
 
-		$password = $values["password"];
-		unset($values["password"]);
+        $password = $values["password"];
+        unset($values["password"]);
 
-		if ($model === false) {
-			throw new RuntimeException("User model is not defined.");
-		}
+        if ($model === false) {
+            throw new RuntimeException("User model is not defined.");
+        }
 
-		if (!class_exists($model)) {
-			throw new InvalidArgumentException("Class " . $model . " does not exist");
-		}
+        if (!class_exists($model)) {
+            throw new InvalidArgumentException("Class " . $model . " does not exist");
+        }
 
-		if (!in_array("Illuminate\Contracts\Auth\Authenticatable", class_implements($model))) {
-			throw new InvalidArgumentException("Class " .
-				$model .
-				" must implement Illuminate\Contracts\Auth\Authenticatable");
-		}
+        if (!in_array("Illuminate\Contracts\Auth\Authenticatable", class_implements($model))) {
+            throw new InvalidArgumentException("Class " .
+                $model .
+                " must implement Illuminate\Contracts\Auth\Authenticatable");
+        }
 
-		$user = null;
-		foreach ($values as $col => $value) {
-			$found = $model::where($col, $value);
-			if ($found->exists()) {
-				$user = $found->first();
-				break;
-			}
-		}
-		
-		if (is_null($user) || !Hash::verify($password, $user->getAuthPassword())) {
-			return false;
-		}
+        $user = null;
+        foreach ($values as $col => $value) {
+            $found = $model::where($col, $value);
+            if ($found->exists()) {
+                $user = $found->first();
+                break;
+            }
+        }
+        
+        if (is_null($user) || !Hash::verify($password, $user->getAuthPassword())) {
+            return false;
+        }
 
-		Session::set("user", $user->getAuthIdentifier());
-		return true;
+        Session::set("user", $user->getAuthIdentifier());
+        return true;
     }
 
     public static function user()

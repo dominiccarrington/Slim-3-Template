@@ -15,7 +15,9 @@ class Validator
         foreach ($rules as $field => $rule) {
             $split = explode('|', $field);
             try {
-                $rule->setName(isset($split[1]) ? $split[1] : ucfirst($split[0]))->assert($request->getParam($split[0]));
+                $rule->setName(isset($split[1]) ?
+                    $split[1] :
+                    ucfirst($split[0]))->assert($request->getParam($split[0]));
             } catch (NestedValidationException $e) {
                 $this->errors[$split[0]] = $e->getMessages();
             }
