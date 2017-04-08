@@ -1,6 +1,5 @@
 <?php
 use App\Handler\WhoopsErrorHandler;
-use FileSystem;
 use Interop\Container\ContainerInterface;
 use Slim\Views\Twig;
 use Slim\Views\TwigExtension;
