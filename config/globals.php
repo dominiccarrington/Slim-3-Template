@@ -1,9 +1,9 @@
 <?php
-define('ROOT_DIR', __DIR__ . '/..');
-define('APP_DIR', __DIR__ . '/../app');
-define('CONFIG_DIR', __DIR__ . '/../config');
-define('ROUTES_DIR', __DIR__ . "/../routes");
-define('RESOURCES_DIR', __DIR__ . '/../resources');
-define('STUB_DIR', __DIR__ . '/../stubs');
-define('PUBLIC_DIR', __DIR__ . '/../public');
-define("CONSOLE_MODE", php_sapi_name() == 'cli');
+define("ROOT_DIR", __DIR__ . "/..");
+define("APP_DIR", ROOT_DIR . "/app");
+define("CONFIG_DIR", ROOT_DIR . "/config");
+define("ROUTES_DIR",ROOT_DIR . "/routes");
+define("RESOURCES_DIR", ROOT_DIR . "/resources");
+define("STUB_DIR", ROOT_DIR . "/stubs");
+define("PUBLIC_DIR", ROOT_DIR . "/public");
+define("CONSOLE_MODE", php_sapi_name() == "cli");
