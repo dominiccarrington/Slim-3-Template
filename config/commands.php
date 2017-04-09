@@ -1,8 +1,8 @@
 <?php
 use App\Command\AppNameCommand;
 use App\Command\CleanUpCommand;
-use App\Command\CrudCommand;
 use App\Command\CreateValidationCommand;
+use App\Command\CrudCommand;
 use Phinx\Console\Command as Phinx;
 
 $app->add(new AppNameCommand);
