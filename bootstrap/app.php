@@ -1,6 +1,7 @@
 <?php
 use Illuminate\Support\MessageBag;
 use Slim\Views\Twig;
+use Symfony\Component\Finder\Finder;
 
 session_start();
 require_once 'console.php';
@@ -20,4 +21,10 @@ require_once CONFIG_DIR . '/middleware.php';
 /**
  * Register routes
  */
-require_once CONFIG_DIR . '/routes.php';
+ $files = Finder::create()
+        ->in(ROUTES_DIR)
+        ->name("*.php");
+
+foreach ($files as $file) {
+    require $file;
+}

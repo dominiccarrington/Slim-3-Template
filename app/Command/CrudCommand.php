@@ -102,9 +102,8 @@ class CrudCommand extends Command
     private function createRoutes($model, OutputInterface $output)
     {
         file_put_contents(
-            CONFIG_DIR . "/routes.php",
-            $this->convertString($model, $this->routeStub),
-            FILE_APPEND
+            ROUTES_DIR . "/{$model}.php",
+            $this->convertString($model, $this->routeStub)
         );
     }
 
